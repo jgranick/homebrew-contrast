@@ -5,18 +5,18 @@ class Contrast < Formula
     license "MIT"
   
     if OS.mac?
-      url "https://github.com/Contrast-Security-OSS/homebrew-contrast/releases/download/v0.0.0/contrast-macos"
-      sha256 "1cb21076b55e9a6dc2688b72ccccd6cc2d39ac884bf3c73b5b915c1340b816f0"
+      url "https://contrastsecurity.jfrog.io/artifactory/cli/1.0.0/mac/contrast"
+      sha256 "44135048b595ffd959fabd932b89bf8220102d7474e69840161888d997632d6f"
       
     elsif OS.linux?
       if Hardware::CPU.intel?
-        url "https://github.com/Contrast-Security-OSS/contrast/releases/download/v0.0.0/contrast-linux"
-        sha256 "41234350aa93ba4b5a53492c928aaeee649bbdba4dc6802482722685ba95b355"
+        url "https://contrastsecurity.jfrog.io/artifactory/cli/1.0.0/linux/contrast"
+        sha256 "4c1ddacbaecf446f3cb6272209e35e0b4d4278c2c72b12acc7d190b46df3ad5c"
       end
     end
   
     def install
-      bin.install (OS.linux? ? "contrast-linux" : "contrast-macos") => "contrast"
+      bin.install "contrast"
     end
   end
   
